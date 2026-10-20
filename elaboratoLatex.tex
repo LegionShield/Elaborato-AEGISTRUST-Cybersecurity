@@ -1,0 +1,192 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{textalpha}
+\usepackage{booktabs}
+\usepackage{geometry} 
+\usepackage[backend=biber, style=numeric]{biblatex}
+\usepackage{csquotes}
+\usepackage{tcolorbox}
+
+
+
+\newcommand{\aegistrust}{$\Lambda\Xi$GIST\reflectbox{R}UST}
+\newcommand{\trustlevel}[1]{\delta_{#1} \rightarrow \infty}
+\newcommand{\pred}[1]{P_{#1}(\lambda)}
+\newcommand{\deepcheck}[1]{\Gamma_{df}(#1)}
+
+\newenvironment{industrialNote}
+{\begin{tcolorbox}[colback=blue!5,colframe=blue!75!black,title=Specifiche Industriali]}
+{\end{tcolorbox}}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace{1cm}
+    {\Large \textsc{Università degli Studi di Verona}} \\
+    \vspace{0.5cm}
+    {\large Dipartimento di Informatica} \\ 
+    \vspace{0.5cm}
+    {\large Elaborato Latex} \\
+    
+    \vspace{4cm}
+    
+    {\LARGE \textbf{Sviluppo e Implementazione del Software}} \\
+    \vspace{0.5cm}
+    {\Huge \textbf{\aegistrust}} \\
+    \vspace{1cm}
+    {\large \textit{Protezione Deepfake, Intelligence OSINT,Analisi Biometrica Multimediale e Aziendale}}
+    
+    \vspace{4cm}
+    
+    \begin{minipage}[t]{0.47\textwidth}
+        \raggedright
+        \textbf{Relatore:}\\
+        Chiar.mo Prof.\\
+        Enrico Gregorio
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.47\textwidth}
+        \raggedleft
+        \textbf{Candidato:}\\
+        L$\Xi$GION\\
+    \end{minipage}
+    
+    \vfill
+    
+    \rule{0.8\textwidth}{0.4pt}\\
+    \vspace{0.5cm}
+    {\large Anno Accademico 2025-2026}
+\end{titlepage}
+
+\tableofcontents
+
+\chapter{Introduzione al Progetto \aegistrust}
+
+\section{Visione d'Insieme}
+Il software \aegistrust{} nasce come risposta alla crescente necessità di sicurezza proattiva. A differenza dei sistemi reattivi tradizionali, \aegistrust{} implementa un framework di fiducia dinamica basato su tre pilastri fondamentali:
+\begin{itemize}
+    \item Scansione continua di fonti aperte (OSINT) per la mitigazione del rischio.
+    \item Analisi euristica dei comportamenti di rete mediante intelligenza artificiale.
+    \item Protezione avanzata contro la manipolazione biometrica, media sintetici e furto d'identità vocale.
+\end{itemize}
+
+\section{Architettura Modulare Enterprise}
+L'efficienza di \aegistrust{} è garantita dalla sua struttura a microservizi indipendenti, che permette una scalabilità orizzontale del sistema:
+\begin{enumerate}
+    \item \textbf{Modulo Alpha}: Gestione delle identità e dei permessi di accesso.
+    \item \textbf{Modulo Sigma}: Motore di ricerca OSINT e data mining su larga scala.
+    \item \textbf{Modulo Tau}: Analisi predittiva e reporting per il management.
+    \item \textbf{Modulo Omega}: Layer di protezione meeting online (Zoom, Teams) con funzionalità biometriche.
+\end{enumerate}
+
+\chapter{Ricerca OSINT e Analisi Database}
+
+\section{Integrazione Database Aziendali e Pubblici}
+\aegistrust{} opera un cross-check istantaneo tra database pubblici e archivi aziendali privati. Il sistema interroga i registri delle Camere di Commercio per validare l'esistenza legale delle entità durante le trattative commerciali.
+
+\begin{industrialNote}
+Il software è progettato per la protezione della proprietà intellettuale. Ogni interrogazione ai database segue protocolli di crittografia asimmetrica per evitare il leak di informazioni sensibili durante le fasi di Due Diligence.
+\end{industrialNote}
+
+\section{Metodologie OSINT Avanzate}
+Il modulo OSINT di \aegistrust{} esegue una ricerca profonda su repository pubblici e leak database per identificare vulnerabilità prima che vengano sfruttate da attori malevoli. La metrica di esposizione $E$ viene calcolata come:
+\[ E = \frac{\sum_{i=1}^{n} v_i}{T} \]
+dove $v_i$ rappresenta il peso della singola criticità rilevata.
+
+\chapter{Protezione Deepfake e Analisi Biometrica}
+
+\section{Validazione Biometrica rPPG}
+Uno dei componenti più innovativi di \aegistrust{} è il motore di rilevamento Deepfake applicato ai meeting online. Il software analizza il segnale video in tempo reale alla ricerca di artefatti di generazione neurale (GAN).
+
+Il sistema utilizza la fotopletismografia remota (rPPG) per rilevare il battito cardiaco facciale, parametro assente nei media sintetici, garantendo l'autenticità dei partecipanti durante videoconferenze critiche su piattaforme come Zoom e Microsoft Teams \cite{deepfake2026}.
+
+\section{Analisi Comportamentale e Liveness Detection}
+Oltre all'analisi rPPG, l'integrità del soggetto viene monitorata attraverso parametri fisiologici non riproducibili fedelmente dalle attuali IA generative:
+\begin{itemize}
+    \item \textbf{Spontaneous Blinking Frequency (SBF)}: Monitoraggio del battito delle palpebre per rilevare pattern innaturali (troppo frequenti o assenti).
+    \item \textbf{Audio-Visual Coherence}: Verifica della correlazione tra l'ampiezza del volume audio e l'apertura fisica della bocca (pixel aperture).
+\end{itemize}
+
+Il calcolo della sincronia audio-video viene effettuato tramite il seguente integrale:
+\begin{equation}
+    \Psi_{sync} = \int_{t_0}^{t_1} | \text{Volume}(t) - \text{AperturaBocca}(t) | \, dt
+\end{equation}
+
+Se lo scostamento $\Psi_{sync}$ supera la soglia di tolleranza, il sistema segnala un tentativo di injection video o doppiaggio sintetico.
+
+\section{Identificazione Vocale e Analisi Fonetica}
+\aegistrust{} integra un motore di scansione vocale autonoma. Il software analizza le singole parole pronunciate durante il meeting, estraendo l'impronta fonetica unica dell'interlocutore per confermarne l'identità rispetto ai campioni pre-caricati nel database aziendale.
+
+\begin{industrialNote}
+L'analisi vocale avviene rigorosamente in locale (On-Premise) per garantire che i dati biometrici della voce non lascino mai il perimetro di sicurezza dell'azienda, prevenendo furti di identità su larga scala.
+\end{industrialNote}
+
+\section{Algoritmo di Sintesi Deepfake Check}
+La decisione finale sulla veridicità del flusso multimediale unifica tutti i parametri biometrici (rPPG, Artefatti FFT e Sincronia) nella seguente funzione logistica aggiornata:
+
+\begin{equation}
+    \deepcheck{S} = \frac{1}{1 + e^{-(\alpha \cdot \text{rPPG} + \beta \cdot \text{FFT} + \gamma \cdot \Psi_{sync})}}
+\end{equation}
+
+\section{Modelli Predittivi Aziendali}
+La predittività dei prodotti aziendali rimane una funzione core. Utilizzando modelli statistici, il software calcola la probabilità di successo $P$:
+
+\begin{equation}
+    \Omega= \oint_{\partial \Sigma} \vec{F} \cdot d\vec{s} + \sqrt{\frac{\int_{0}^{\infty} \pred{t} e^{-kt} dt}{n!}}
+\end{equation}
+
+\chapter{Specifiche Tecniche e Risultati}
+
+\section{Analisi delle Performance Industriali}
+I test eseguiti su infrastrutture aziendali mostrano un abbattimento dei falsi positivi nelle ricerche OSINT.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Modulo & Target Database & Tempo Risposta (ms) & Affidabilità \\
+\midrule
+OSINT Public & Camere Commercio & 120 & 98.2\% \\
+Deepfake Shield & Zoom/Teams Feed & 45 & 99.1\% \\
+Leak Scanner & Dark Web Repos & 210 & 95.5\% \\
+\bottomrule
+\end{tabular}
+\caption{Performance dei moduli core di \aegistrust{} in ambito Enterprise.}
+\end{table}
+
+\section{Validazione dei Parametri Biometrici}
+I test specifici sui moduli di riconoscimento vocale e video confermano l'efficacia contro attacchi di spoofing.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Parametro & Metodo Analisi & Soglia Errore & Risultato \aegistrust \\
+\midrule
+Identità Vocale & Analisi Fonetica & < 0.5\% & \textbf{Conforme} \\
+Deepfake Video & Blinking \& rPPG & < 0.2\% & \textbf{Conforme} \\
+Sync Audio-Video & Apertura/Decibel & < 1.0\% & \textbf{Conforme} \\
+\bottomrule
+\end{tabular}
+\caption{Validazione dei parametri biometrici multimodali.}
+\end{table}
+
+\section{Integrazione Grafica}
+Il flusso operativo tra il software e i database esterni è illustrato nel diagramma di sistema.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.6\textwidth]{grafico.pnj.png}
+\caption{Diagramma di interazione tra \aegistrust, Zoom e i database pubblici.}
+\end{figure}
+
+\printbibliography
+
+\end{document}
